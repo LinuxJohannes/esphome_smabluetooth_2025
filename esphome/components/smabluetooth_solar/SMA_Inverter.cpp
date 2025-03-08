@@ -530,11 +530,13 @@ E_RC ESP32_SMA_Inverter::getInverterDataCfl(uint32_t command, uint32_t first, ui
                   invData.DevStatus =value32 ;// value32;
                   ESP_LOGI(TAG, "Device Status:    %d  ", value32);
                   break;
+#if 0
               case OperationGriSwStt:
                   value32 = getattribute(recptr);
                   invData.GridRelay = value32;
                   ESP_LOGI(TAG, "Grid Relay:    %d  ", invData.GridRelay);
                   break;
+#endif
               case MeteringGridMsTotWOut:
                   invData.MeteringGridMsTotWOut = value32;
                   break;
@@ -651,7 +653,7 @@ E_RC ESP32_SMA_Inverter::getInverterData(enum getInverterDataType type) {
       first = 0x00214800;
       last = 0x002148FF;
       break;
-
+#if 0
   case GridRelayStatus:
       ESP_LOGD(TAG, "*** GridRelayStatus ***");
       // INV_GRIDRELAY
@@ -659,7 +661,7 @@ E_RC ESP32_SMA_Inverter::getInverterData(enum getInverterDataType type) {
       first = 0x00416400;
       last = 0x004164FF;
       break;
-
+#endif
   case OperationTime:
       ESP_LOGD(TAG, "*** OperationTime ***");
       // SPOT_OPERTM, SPOT_FEEDTM
