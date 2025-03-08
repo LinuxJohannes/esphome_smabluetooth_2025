@@ -339,7 +339,7 @@ void SmaBluetoothSolar::on_inverter_data(const std::vector<uint8_t> &data) {
     case SMANET2: {
 #if 0
       publish_1_reg_sensor_state(this->inverter_status_sensor_, 0, 1);
-#end
+#endif
       publish_2_reg_sensor_state(this->pv_active_power_sensor_, 1, 2, ONE_DEC_UNIT);
 
       publish_1_reg_sensor_state(this->pvs_[0].voltage_sensor_, 3, ONE_DEC_UNIT);
@@ -375,7 +375,7 @@ void SmaBluetoothSolar::on_inverter_data(const std::vector<uint8_t> &data) {
     default: {
 #if 0
       publish_1_reg_sensor_state(this->inverter_status_sensor_, 0, 1);
-#end
+#endif
       publish_2_reg_sensor_state(this->pv_active_power_sensor_, 1, 2, ONE_DEC_UNIT);
 
       publish_1_reg_sensor_state(this->pvs_[0].voltage_sensor_, 3, ONE_DEC_UNIT);
