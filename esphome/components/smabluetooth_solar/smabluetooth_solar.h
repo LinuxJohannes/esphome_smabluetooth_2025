@@ -49,7 +49,7 @@ SMA, Speedwire are registered trademarks of SMA Solar Technology AG
 #include <vector>
 #include <map>
 
-#define SIZE_INVETER_DATA_TYPE_QUERY 9
+#define SIZE_INVETER_DATA_TYPE_QUERY 8 // was 9 before
 
 
 namespace esphome {
