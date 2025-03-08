@@ -254,7 +254,7 @@ enum getInverterDataType {
     OperationTime       = 1 << 10,
     SoftwareVersion     = 1 << 11,
     DeviceStatus        = 1 << 12,
-    GridRelayStatus     = 1 << 13,
+//    GridRelayStatus     = 1 << 13,
     BatteryChargeStatus = 1 << 14,
     BatteryInfo         = 1 << 15,
     InverterTemp        = 1 << 16,
