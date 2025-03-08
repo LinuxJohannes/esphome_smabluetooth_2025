@@ -653,7 +653,7 @@ E_RC ESP32_SMA_Inverter::getInverterData(enum getInverterDataType type) {
       first = 0x00214800;
       last = 0x002148FF;
       break;
-#if 1
+#if 0
   case GridRelayStatus:
       ESP_LOGD(TAG, "*** GridRelayStatus ***");
       // INV_GRIDRELAY
@@ -685,7 +685,7 @@ E_RC ESP32_SMA_Inverter::getInverterData(enum getInverterDataType type) {
       break;
 
   default:
-      ESP_LOGW(TAG, "Invalid getInverterDataType!!");
+      ESP_LOGW(TAG, "Invalid getInverterDataType %08X!!",type);
       return E_BADARG;
   };
 
