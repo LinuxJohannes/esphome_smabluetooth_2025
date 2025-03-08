@@ -51,8 +51,8 @@ sensor:
     inverter_status: 
       name: "Inverter Status"
 
-    grid_relay: 
-      name: "Grid relay Status"
+#    grid_relay: 
+#      name: "Grid relay Status"
 
     phase_a:
       voltage:

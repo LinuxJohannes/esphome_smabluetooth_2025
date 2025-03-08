@@ -129,7 +129,7 @@ CONFIG_SCHEMA = (
             cv.Optional(CONF_PV1): PV_SCHEMA,
             cv.Optional(CONF_PV2): PV_SCHEMA,
             cv.Optional(CONF_INVERTER_STATUS_CODE): sensor.sensor_schema(),
-            cv.Optional(CONF_GRID_RELAY_CODE): sensor.sensor_schema(),
+#            cv.Optional(CONF_GRID_RELAY_CODE): sensor.sensor_schema(),
             cv.Optional(CONF_INVERTER_STATUS): text_sensor.text_sensor_schema(),
             cv.Optional(CONF_GRID_RELAY): text_sensor.text_sensor_schema(),
             cv.Optional(CONF_FREQUENCY): sensor.sensor_schema(
