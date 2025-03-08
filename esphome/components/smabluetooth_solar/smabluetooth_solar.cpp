@@ -149,7 +149,7 @@ void SmaBluetoothSolar::loop() {
         //sleep and restart
         ESP_LOGE(TAG, "SMA logonff RC %d ", rc); // we see rc -5
         inverterState = SmaInverterState::Connect;
-        waitMillis = 1000;
+        waitMillis = 1500;
       }
     } 
     break;
@@ -298,9 +298,9 @@ void SmaBluetoothSolar::update() {
   updateSensor(phases_[0].voltage_sensor_, String("UacA"), smaInverter->dispData.Uac1);
   updateSensor(phases_[0].current_sensor_, String("IacA"), smaInverter->dispData.Iac1);
   updateSensor(phases_[0].active_power_sensor_, String("IacA"), smaInverter->invData.Pac1);
-
-  updateSensor(status_text_sensor_, String("InverterStatus"), getInverterCode(smaInverter->invData.DevStatus));
 #if 0
+  updateSensor(status_text_sensor_, String("InverterStatus"), getInverterCode(smaInverter->invData.DevStatus));
+
   updateSensor(grid_relay_text_sensor_, String("GridRelay"), getInverterCode(smaInverter->invData.GridRelay));
 #endif
 
@@ -337,8 +337,9 @@ void SmaBluetoothSolar::on_inverter_data(const std::vector<uint8_t> &data) {
 
   switch (this->protocol_version_) {
     case SMANET2: {
+#if 0
       publish_1_reg_sensor_state(this->inverter_status_sensor_, 0, 1);
-
+#end
       publish_2_reg_sensor_state(this->pv_active_power_sensor_, 1, 2, ONE_DEC_UNIT);
 
       publish_1_reg_sensor_state(this->pvs_[0].voltage_sensor_, 3, ONE_DEC_UNIT);
@@ -372,8 +373,9 @@ void SmaBluetoothSolar::on_inverter_data(const std::vector<uint8_t> &data) {
       break;
     }
     default: {
+#if 0
       publish_1_reg_sensor_state(this->inverter_status_sensor_, 0, 1);
-
+#end
       publish_2_reg_sensor_state(this->pv_active_power_sensor_, 1, 2, ONE_DEC_UNIT);
 
       publish_1_reg_sensor_state(this->pvs_[0].voltage_sensor_, 3, ONE_DEC_UNIT);
