@@ -135,7 +135,7 @@ E_RC ESP32_SMA_Inverter::getPacket(uint8_t expAddr[6], int wait4Command) {
         btrdBuf[rdCnt]= BTgetByte();
         if (readTimeout) break;
       }
-      ESP_LOGW(TAG, "L2 Rec=%d bytes", rdCnt-18);
+      ESP_LOGD(TAG, "L2 Rec=%d bytes", rdCnt-18);
       #if (DEBUG_SMA > 2)
       HexDump(BTrdBuf, rdCnt, 10, 'R');
       #endif
@@ -737,7 +737,7 @@ E_RC ESP32_SMA_Inverter::initialiseSMAConnection() {
 
   // Extract ESP32 BT address
   memcpy(espBTAddress, pcktBuf+26,6); 
-  ESP_LOGW(TAG, "ESP32 BT address: %02X:%02X:%02X:%02X:%02X:%02X",
+  ESP_LOGD(TAG, "ESP32 BT address: %02X:%02X:%02X:%02X:%02X:%02X",
              espBTAddress[5], espBTAddress[4], espBTAddress[3],
              espBTAddress[2], espBTAddress[1], espBTAddress[0]);
 
@@ -758,7 +758,7 @@ E_RC ESP32_SMA_Inverter::initialiseSMAConnection() {
     return E_CHKSUM;
 
   invData.Serial = get_u32(pcktBuf + 57);
-  ESP_LOGW(TAG, "Serial Nr: %lu", invData.Serial);
+  ESP_LOGD(TAG, "Serial Nr: %lu", invData.Serial);
   return E_OK;
 }
 
