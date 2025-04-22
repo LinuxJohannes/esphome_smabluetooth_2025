@@ -39,8 +39,8 @@ UNIT_HOURS = "h"
 UNIT_KOHM = "kΩ"
 UNIT_MILLIAMPERE = "mA"
 
-CONF_INVERTER_STATUS = "inverter_status"
-CONF_INVERTER_STATUS_CODE = "inverter_status_code"
+#CONF_INVERTER_STATUS = "inverter_status"
+#CONF_INVERTER_STATUS_CODE = "inverter_status_code"
 CONF_PV_ACTIVE_POWER = "pv_active_power"
 CONF_INVERTER_MODULE_TEMP = "inverter_module_temp"
 CONF_PROTOCOL_VERSION = "protocol_version"
@@ -48,8 +48,8 @@ CONF_PROTOCOL_VERSION = "protocol_version"
 CONF_SMA_INVERTER_BLUETOOTH_MAC = "sma_inverter_bluetooth_mac"
 CONF_SMA_INVERTER_PASSWORD = "sma_inverter_password"
 
-CONF_GRID_RELAY = "grid_relay"
-CONF_GRID_RELAY_CODE = "grid_relay_code"
+#CONF_GRID_RELAY = "grid_relay"
+#CONF_GRID_RELAY_CODE = "grid_relay_code"
 
 AUTO_LOAD = ["text_sensor"]
 DEPENDENCIES = ["esp32", "sensor", "network"]
@@ -128,7 +128,7 @@ CONFIG_SCHEMA = (
             cv.Optional(CONF_PHASE_C): PHASE_SCHEMA,
             cv.Optional(CONF_PV1): PV_SCHEMA,
             cv.Optional(CONF_PV2): PV_SCHEMA,
-            cv.Optional(CONF_INVERTER_STATUS_CODE): sensor.sensor_schema(),
+#            cv.Optional(CONF_INVERTER_STATUS_CODE): sensor.sensor_schema(),
 #            cv.Optional(CONF_GRID_RELAY_CODE): sensor.sensor_schema(),
             cv.Optional(CONF_INVERTER_STATUS): text_sensor.text_sensor_schema(),
             cv.Optional(CONF_GRID_RELAY): text_sensor.text_sensor_schema(),
@@ -162,11 +162,11 @@ CONFIG_SCHEMA = (
                 device_class=DEVICE_CLASS_ENERGY,
                 state_class=STATE_CLASS_TOTAL_INCREASING,
             ),
-            cv.Optional(CONF_INVERTER_MODULE_TEMP): sensor.sensor_schema(
-                unit_of_measurement=UNIT_CELSIUS,
-                accuracy_decimals=1,
-                state_class=STATE_CLASS_MEASUREMENT,
-            ),
+#            cv.Optional(CONF_INVERTER_MODULE_TEMP): sensor.sensor_schema(
+#                unit_of_measurement=UNIT_CELSIUS,
+#                accuracy_decimals=1,
+#                state_class=STATE_CLASS_MEASUREMENT,
+#            ),
         }
     )
     .extend(cv.polling_component_schema("60s"))

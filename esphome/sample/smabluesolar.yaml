@@ -48,8 +48,8 @@ sensor:
     sma_inverter_bluetooth_mac: !secret sma_etsolar_bluetoothmac
     sma_inverter_password: !secret sma_etsolar_password
 
-    inverter_status: 
-      name: "Inverter Status"
+#    inverter_status: 
+#      name: "Inverter Status"
 
 #    grid_relay: 
 #      name: "Grid relay Status"
@@ -107,5 +107,5 @@ sensor:
     total_energy_production:
       name: "Total Energy Production"
 
-    inverter_module_temp:
-      name: "Inverter Module Temp"
+#    inverter_module_temp:
+#      name: "Inverter Module Temp"

@@ -120,7 +120,7 @@ void SmaBluetoothSolar::loop() {
             ESP_LOGE(TAG, "Connecting SMA inverter failed");
             //add cleanup / disconnect here ?
             inverterState = SmaInverterState::Begin;
-            waitMillis *= 50;  // was 10 bevore
+            waitMillis *= 150;  // was 10 bevore
           }
         }
     }
@@ -148,8 +148,9 @@ void SmaBluetoothSolar::loop() {
       } else {
         //sleep and restart
         ESP_LOGE(TAG, "SMA logonff RC %d ", rc); // we see rc -5
-        inverterState = SmaInverterState::Connect;
-        waitMillis = 1500;
+        //inverterState = SmaInverterState::Connect;
+        //waitMillis = 1500;
+		ESP.restart();
       }
     } 
     break;
@@ -239,8 +240,8 @@ void SmaBluetoothSolar::loop() {
   }
 */
   App.feed_wdt();
-  delay(10);
-  //delay(100);
+  //delay(10);
+  delay(100);
 }
 
 /**
