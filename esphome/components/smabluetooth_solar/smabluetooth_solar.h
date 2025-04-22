@@ -41,6 +41,8 @@ SMA, Speedwire are registered trademarks of SMA Solar Technology AG
 #define PHASES 3  // Type of inverter, one or 3 phases
 #define HAVE_MODULE_TEMP false
 
+
+#include "esphome.h"
 #include "esphome/core/component.h"
 #include "esphome/components/sensor/sensor.h"
 #include "esphome/components/text_sensor/text_sensor.h"
@@ -73,7 +75,8 @@ enum class SmaInverterState {
   ReadValues,//read values (piece by piece)
   DoneReadingValues,
   Disconnect,//disconnect again from the inverter
-  NightTime//nighttime, nothing to do here, wait for next sunlight
+  NightTime,//nighttime, nothing to do here, wait for next sunlight
+  Reset  // 
 };
 
 class SmaBluetoothSolar;
