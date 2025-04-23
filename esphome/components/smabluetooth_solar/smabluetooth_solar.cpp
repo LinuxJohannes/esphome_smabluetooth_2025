@@ -149,7 +149,7 @@ void SmaBluetoothSolar::loop() {
         //sleep and reset
         inverterState = SmaInverterState::Reset;
         ESP_LOGE(TAG, "SMA logonff RC %d ", rc); // we see rc -5
-        waitMillis = 1500;
+        //waitMillis = 1500;
       }
     } 
     break;
@@ -183,7 +183,7 @@ void SmaBluetoothSolar::loop() {
 	
     case SmaInverterState::Reset: {
       //prepare for reset
-      smaInverter->disconnect(); //moved btConnected to inverter class
+      //smaInverter->disconnect(); //moved btConnected to inverter class
 	  ESP.restart();
     }
     break;
