@@ -87,6 +87,7 @@ void SmaBluetoothSolar::loop() {
       
         //next state
         //simply begin here
+        ESP_LOGD(TAG, "Start after Reset");
         inverterState = SmaInverterState::Begin;
     }
     break;
@@ -94,6 +95,7 @@ void SmaBluetoothSolar::loop() {
     case SmaInverterState::Begin: {//do Begin
         //lets dobegin
         // "true" creates this device as a BT Master.
+        ESP_LOGD(TAG, "Do Begin");
         if (smaInverter->begin("ESP32toSMA", true)) {
         //next state
           inverterState = SmaInverterState::Connect;
